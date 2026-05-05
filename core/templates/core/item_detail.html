@@ -1,0 +1,8 @@
+<h1>{{ object.name }}</h1>
+<p>{{ object.description }}</p>
+<p>Owner: {{ object.owner.username }}</p>
+<p>
+  <a href="{% url 'core:item-update' object.pk %}">Edit</a>
+  <a href="{% url 'core:item-delete' object.pk %}">Delete</a>
+  <a href="{% url 'core:item-list' %}">Back</a>
+</p>
