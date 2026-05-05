@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h1 class="h3">Profile dashboard</h1>
+<div class="card mb-3">
+  <div class="card-body">
+    <p><strong>Email:</strong> {{ profile.user.email }}</p>
+    <p><strong>Display name:</strong> {{ profile.display_name|default:'-' }}</p>
+    <p><strong>Bio:</strong> {{ profile.bio|default:'-' }}</p>
+    {% if profile.avatar_url %}<p><a href="{{ profile.avatar_url }}" target="_blank">Avatar URL</a></p>{% endif %}
+    <a class="btn btn-primary" href="{% url 'profiles:profile-update' %}">Edit profile</a>
+  </div>
+</div>
+{% endblock %}
